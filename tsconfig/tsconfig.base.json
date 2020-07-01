@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "sourceMap": true,
+        "rootDir": "../src/",
+        "declaration": true,
+        "esModuleInterop": true
+    },
+    "include": [
+        "../src"
+    ],
+    "compileOnSave": true
+}

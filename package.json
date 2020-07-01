@@ -1,0 +1,38 @@
+{
+  "name": "rangr",
+  "version": "0.0.1",
+  "description": "Manage ranges and overlaps between them",
+  "main": "./dist/es6/index.js",
+  "types": "./dist/es6/index.d.ts",
+  "scripts": {
+    "build": "tsc --p ./tsconfig/tsconfig.es5.json && tsc --p ./tsconfig/tsconfig.es6.json",
+    "prepublish": "npm run build && npm run test",
+    "test": "exit 0"
+  },
+  "exports": {
+    "require": "./dist/es5/index.js",
+    "import": "./dist/es6/index.js"
+  },
+  "keywords": [
+    "range",
+    "set"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Tarun Batra <me@tarunbatra.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarunbatra/rangr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tarunbatra/rangr/issues"
+  },
+  "homepage": "https://github.com/tarunbatra/rangr#readme"
+}
