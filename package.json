@@ -2,7 +2,7 @@
   "name": "rangr",
   "version": "0.0.1",
   "description": "Manage ranges and overlaps between them",
-  "main": "./dist/es6/index.js",
+  "main": "./dist/es5/index.js",
   "scripts": {
     "build": "tsc --p ./tsconfig/tsconfig.es5.json && tsc --p ./tsconfig/tsconfig.es6.json",
     "prepublish": "npm run test && npm run build",
