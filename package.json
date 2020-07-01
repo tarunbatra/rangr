@@ -1,6 +1,6 @@
 {
   "name": "rangr",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Manage ranges and overlaps between them",
   "main": "./dist/es5/index.js",
   "scripts": {
