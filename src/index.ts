@@ -1,8 +1,8 @@
-type inputRange = [ number, number ];
+export type inputRange = [ number, number ];
 
 class Rangr {
     private ranges: inputRange[] = [];
-    constructor (ranges: inputRange[]) {
+    constructor (ranges?: inputRange[]) {
         if (ranges) {
             if (!Array.isArray(ranges)) {
                 throw new Error('Invalid ranges');
@@ -12,9 +12,10 @@ class Rangr {
         }
     }
 
-    add (range: inputRange) {
-        this.ranges.push(range);
-        this.ranges = generateRange(this.ranges);
+    add (ranges: inputRange[]) {
+        if (ranges) {
+            this.ranges = generateRange(this.ranges.concat(ranges));
+        }
     }
 
     toString (): string {
@@ -22,7 +23,7 @@ class Rangr {
         return str.toString();
     }
 
-    toIterable (): Iterable<inputRange> {
+    toIterable (): IterableIterator<inputRange> {
         return this.ranges[Symbol.iterator]();
     }
 
@@ -30,7 +31,7 @@ class Rangr {
         return this.ranges;
     }
 }
-module.exports = Rangr;
+export default Rangr;
 
 function generateRange(ranges: inputRange[]): inputRange[] {
     const START = 0;

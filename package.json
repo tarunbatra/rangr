@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Manage ranges and overlaps between them",
   "main": "./dist/es6/index.js",
-  "types": "./dist/es6/index.d.ts",
   "scripts": {
     "build": "tsc --p ./tsconfig/tsconfig.es5.json && tsc --p ./tsconfig/tsconfig.es6.json",
-    "prepublish": "npm run build && npm run test",
-    "test": "exit 0"
+    "prepublish": "npm run test && npm run build",
+    "test": "TS_NODE_PROJECT=tsconfig/tsconfig.base.json mocha -r ts-node/register tests/**/*.test.ts",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test"
   },
+  "type": "module",
   "exports": {
     "require": "./dist/es5/index.js",
     "import": "./dist/es6/index.js"
@@ -23,7 +24,11 @@
   "author": "Tarun Batra <me@tarunbatra.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/mocha": "^7.0.2",
     "@types/node": "^14.0.14",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
   },
   "dependencies": {},
